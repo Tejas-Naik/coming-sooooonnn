@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TroTro-Live coming soon</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='styles.css')}}">
+    <link rel="shortcut icon" type="image/x-icon" href="../static/favicon.ico">
+</head>
+<body id='play'>
+      
+      <div class="wrapper">
+        <div class="title">
+            <h1 class="coming-soon">COMING SOON</h1>
+            <h3 class='sub-h3'>TroTro.Live</h3>
+        </div>
+        <div class="content">
+            <div class="box1">
+                <h4 class="subtitle">Want to know your <span class='highlight'>New TroTro Fares, Routes and Nearest Station?</span> </h4>
+                <p class="enter-mobile">Enter mobile number to be notified when we launch</p>
+                <!-- Mobile number form -->
+                <form action="{{url_for('subscribe')}}" class='mobile-form' method="POST">
+                    <select name="countryCode" class="country-code">
+                        <option data-countryCode="GH" value="233">Ghana (+233)</option>
+                        <option data-countryCode="KE" value="254">Kenya (+254)</option>
+                        <option data-countryCode="NG" value="234">Nigeria (+234)</option>
+                        <option data-countryCode="TG" value="676">Togo (+228)</option>
+		
+                        </optgroup>
+                    </select>
+                    <input type="tel" class='mobile-number-input' name='mobile-number' placeholder="Phone Number..."><br>
+                    <input type="submit" class="verify-button" value="Notify me">
+                </form>
+            </div>
+            <div class="box2">
+                <h3 class="countdown-text">Count Down</h3>
+                <p class="countdown-subtext">Trotro is officially launching in:</p>
+                <div class="count-down">
+            <div class="count-down">
+            <div class="timer day">
+               <div class="count">
+                  <div class="numb">
+                     00
+                  </div>
+                  <div class="text">
+                     Days
+                  </div>
+               </div>
+            </div>
+            <div class="clone">
+               :
+            </div>
+            <div class="timer hour">
+               <div class="count">
+                  <div class="numb">
+                     00
+                  </div>
+                  <div class="text">
+                     Hours
+                  </div>
+               </div>
+            </div>
+            <div class="clone">
+               :
+            </div>
+            <div class="timer min">
+               <div class="count">
+                  <div class="numb">
+                     00
+                  </div>
+                  <div class="text">
+                     Minutes
+                  </div>
+               </div>
+            </div>
+            <div class="clone">
+               :
+            </div>
+            <div class="timer sec">
+               <div class="count">
+                  <div class="numb">
+                     00
+                  </div>
+                  <div class="text">
+                     Seconds
+                  </div>
+               </div>
+            </div><!-- End timer -->
+            </div>
+
+            </div>
+        </div>
+        
+    </div>
+    <div class="end-text">
+                This is the OFFICIAL City Guide for TroTro!
+            </div>
+
+    <script>
+         const day = document.querySelector(".day .numb");
+         const hour = document.querySelector(".hour .numb");
+         const min = document.querySelector(".min .numb");
+         const sec = document.querySelector(".sec .numb");
+         var timer = setInterval(()=>{
+           var currentDate = new Date().getTime();
+           var launchDate = new Date('Jun 30, 2021 13:00:00').getTime();
+           var duration = launchDate - currentDate;
+           var days = Math.floor(duration / (1000 * 60 * 60 * 24));
+           var hours = Math.floor((duration % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+           var minutes = Math.floor((duration % (1000 * 60 * 60)) / (1000 * 60));
+           var seconds = Math.floor((duration % (1000 * 60)) / 1000);
+           day.innerHTML = days;
+           hour.innerHTML = hours;
+           min.innerHTML = minutes;
+           sec.innerHTML = seconds;
+           if(days < 10){
+             day.innerHTML = '0' + days;
+           }
+           if(hours < 10){
+             hour.innerHTML = '0' + hours;
+           }
+           if(minutes < 10){
+             min.innerHTML = '0' + minutes;
+           }
+           if(seconds < 10){
+             sec.innerHTML = '0' + seconds;
+           }
+           if(duration < 0){
+             clearInterval(timer);
+           }
+         }, 1000);
+    </script>
+</body>
+</html>

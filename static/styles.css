@@ -1,0 +1,145 @@
+@import url("https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+body {
+  text-align: center;
+  height: 100vh;
+  width: 100vw;
+  background: url("bg.jpg");
+}
+.wrapper {
+  margin: 9%;
+  border-radius: 20px;
+  background-color: white;
+}
+.title {
+  margin-bottom: 1%;
+}
+.coming-soon{
+    padding-top: 50px;
+    letter-spacing: 20px;
+    color: purple;
+}
+.sub-h3{
+    color: purple;
+}
+.subtitle {
+  text-align: left;
+}
+.highlight {
+  color: purple;
+  font-weight: 1000;
+}
+.content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin: 50px 100px 0px 100px;
+}
+.enter-mobile {
+  margin-top: 20px;
+  text-align: left;
+}
+.mobile-form {
+  text-align: left;
+  margin-bottom: 100px;
+  margin-top: 15px;
+}
+.country-code {
+  background-color:  rgb(224, 221, 221);
+  height: 30px;
+  border: none;
+}
+.mobile-number-input {
+    background-color: rgb(235, 235, 235);
+    border: none;
+    width: 200px;
+    height: 30px;
+}
+.verify-button{
+    width: 160px;
+    height: 35px;
+    background-color: purple;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    margin: 50px 0 10px 165px;
+    cursor: pointer;
+}
+.box2{
+    margin-left: 10%;
+}
+.countdown-text{
+    color: purple;
+    text-align: left;
+}
+.countdown-subtext{
+    text-align: left;
+}
+.count-down{
+  display: flex;
+  width: 100%;
+  height: 100px;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-around;
+}
+.timer{
+    padding-top: 10px;
+    width: 80px;
+    height: 80px;
+    border: solid 2px purple;
+    border-radius: 50%;
+    margin: 20px;
+    box-sizing: border-box;
+    font-weight: 600;
+}
+.end-text{
+    text-align: center;
+    padding-bottom: 40px;
+    font-weight: 500;
+}
+/* Mobile responsve */
+@media screen and (max-width: 786px) {
+    .wrapper{
+        margin: 10%;
+    }
+    .content{
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr;
+        margin: 20px;
+    }
+    .mobile-number-input{
+        width: 180px;
+    }
+    .verify-button{
+        margin: 50px 0 10px 145px;
+    }
+}
+@media screen and (max-width: 375px) {
+    .wrapper{
+        margin: 10%;
+    }
+    .content{
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr;
+        margin: 20px;
+    }
+    .mobile-number-input{
+        width: 130px;
+    }
+    .verify-button{
+        margin: 50px 0 10px 100px;
+    }
+    .highlight{
+        display: block;
+    }
+    .box2{
+        margin: 0;
+    }
+}

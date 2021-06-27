@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>JS Bin audio test</title>
+</head>
+<body id="play">
+  <div id="">
+   <img src="../static/bg.jpg" style="height: 100%; width: 100%;">
+  </div>
+  <audio id="audio-jazz">
+    <source src="jazz.ogg" type="audio/ogg">
+    <source src="../static/sarkodie-bleeding-instumental.mp3" type="audio/mpeg">
+  </audio>
+  <script>
+    var playButton = document.getElementById('play');
+    var jazzAudio = document.getElementById('audio-jazz');
+
+    playButton.onclick = function(){
+      jazzAudio.play();
+      return false;
+    };
+  </script>
+</body>
+</html>
